@@ -58,5 +58,5 @@ Utilice un array en el que solamente se calcula la suma de los valores en forma 
             }
         }
 
-Este proceso demora como maximo 1 segundo para el valor de 92 
+Este proceso demora como máximo 1 segundo para el valor de 92 
 
