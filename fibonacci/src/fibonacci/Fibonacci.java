@@ -23,16 +23,16 @@ public class Fibonacci {
         do {
             //Menu
             System.out.println("\nCalculemos la Sucesion de Fibonacci");
-            do{
+            do {
                 System.out.println("Ingrese un numero mayor a 0");
                 numero = sc.nextInt();
-                if (numero <1) {
+                if (numero < 1) {
                     System.out.println("ERROR!!! El numero no es mayor a 0\n");
                 }
-            }while(numero<1);
-            
-            if (numero<1) {
-                
+            } while (numero < 1);
+
+            if (numero < 1) {
+
             }
             System.out.println("\nIngrese la forma de calcular y presione enter\n");
             System.out.println("1) Tradicional (mas lento por la recursividad)");
@@ -45,7 +45,7 @@ public class Fibonacci {
                     System.out.println("Espere!!!");
                     long resultado = originalFibonacci(numero);
                     System.out.println("===============================");
-                    System.out.println("El resultado para "+ numero + " es "+ resultado );
+                    System.out.println("El resultado para " + numero + " es " + resultado);
                     System.out.println("===============================");
                     break;
                 case 2:
@@ -58,24 +58,28 @@ public class Fibonacci {
 
     //Metodo de miFibonacci
     private static long fibonacciArray(int n) {
-        long[] secuencia = new long[n];
-        if (n > 2 && n <= 92) {
-            secuencia[0] = 1;
-            secuencia[1] = 1;
+        long[] secuencia = new long[n]; //Creamos un array del tamaño necesario
+        if (n > 2 && n <= 92) { //pongo el limite de 92 dado que al ingresar el valor 93, se excede la capacidad de long
+            secuencia[0] = 1; //Asigno el valor 1 al 1
+            secuencia[1] = 1; //Asigno el valor 1 al 2
+
+            //Tabla de resultados
             System.out.println("-----------------");
             System.out.println("|   " + 1 + "   |   " + 1 + "   |");
             System.out.println("|   " + 2 + "   |   " + 1 + "   |");
+
+            //Relleno la tabla
             for (int i = 2; i < n; i++) {
                 secuencia[i] = secuencia[i - 1] + secuencia[i - 2];
                 System.out.println("|   " + (i + 1) + "   |   " + secuencia[i] + "   |");
             }
         }
         if (n > 2 && n <= 92) {
-            return secuencia[n - 1];
+            return secuencia[n - 1]; //Devuelvo el numero
         } else if (n > 92) {
-            return 0;
+            return 0; //Devulevo un valor controlado para los valores superiores a 92
         } else {
-            return 1;
+            return 1; //Devuelvo el valor 1 para 1 y para 2
         }
     }
 
@@ -98,15 +102,12 @@ public class Fibonacci {
     }
 
     private static long originalFibonacci(int numero) {
-        if (numero<2) {
+        if (numero < 2) {
             return numero;
-        }else{
-            return originalFibonacci(numero-1)+ originalFibonacci(numero-2);
+        } else {
+            return originalFibonacci(numero - 1) + originalFibonacci(numero - 2);
         }
-        
-        
-        
-        
+
     }
 
 }
