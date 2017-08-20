@@ -1,14 +1,15 @@
 # miFibonacci
 
-Me motiva escribir esto una situacion que pase en una entrevista de trabajo.
+Me motiva escribir esto una situación que pase en una entrevista de trabajo.
 
-Conocia la sucesion de numeros conocida como Fibonacci pero nunca la habia codeado
+Conocía la sucesión de números conocida como Fibonacci pero nunca la había codeado.
 
-Esta sucesion de numeros tiene distintas formas de ser calculada desde un programa.
+Esta sucesión de números tiene distintas formas de ser calculada desde un programa.
 
 La tradicional es simple pero tiene la recursividad como principal enemiga.
 
-Se ve basicamente como algo asi:
+Se ve básicamente como algo así:
+
 
     //Metodo Fibonacci
     long fibonacci (int n){
@@ -19,15 +20,16 @@ Se ve basicamente como algo asi:
         }
     }
 
-Obiamente uso long para tener la posibilidad de recibir numeros mas grandes en el caso de que n sea alto.
+Obviamente uso long para tener la posibilidad de recibir números mas grandes en el caso de que n sea alto.
 
-El principal problema es que al calcular n mayores a 45 un i7 con 12 gb de ram comienza a tomar algunos segundos
+El principal problema es que al calcular n mayores a 45 un i7 con 12 gb de ram comienza a tomar algunos segundos.
 
-Con el aumento de los calculos en cada incremento de n el tiempo empieza a molestar para un calculo que deberia ser mas rapido.
+Con el aumento de los cálculos en cada incremento de n el tiempo empieza a molestar para un cálculo que se vuelve más lento.
 
-Despues de leer bastante sobre este tema y encontrar varias maneras de resolverlo, opte por escribir una forma simple pero mas rapida.
+Después de leer bastante sobre este tema y encontrar varias maneras de resolverlo, opte por escribir una forma simple pero más rápida.
 
-Utilice un array en el que solamente se calcula la suma de los valores en forma de bucle
+Utilice un array en el que solamente se calcula la suma de los valores en forma de bucle.
+
 
     // Otro Metodo Fibonacci
     private static long fibonacciArray(int n) {
