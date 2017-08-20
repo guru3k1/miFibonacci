@@ -10,14 +10,14 @@ La tradicional es simple pero tiene la recursividad como principal enemiga.
 
 Se ve basicamente como algo asi:
 
-//Metodo Fibonacci
-long fibonacci (int n){
-    if(n<2){
-        return n;
-    }else{
-        return fibonacci(n-1)+fibonacci(n-2);
+    //Metodo Fibonacci
+    long fibonacci (int n){
+        if(n<2){
+            return n;
+        }else{
+            return fibonacci(n-1)+fibonacci(n-2);
+        }
     }
-}
 
 Obiamente uso long para tener la posibilidad de recibir numeros mas grandes en el caso de que n sea alto.
 
