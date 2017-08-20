@@ -17,51 +17,96 @@ public class Fibonacci {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); //Utilidad para tomar valores por teclado
-        
-        long resultado; //variable que dara el resultado
-        int numero= 0; //
-        int uno= 1;
-        
-        System.out.println("Ingrese un numero");
-        numero = sc.nextInt();
-        resultado = fibonacciArray(numero);
-        if (resultado!= 0) {
-            if (numero==1) {
-                 System.out.println("El numero ingresado es  "+ numero+ " y  da como resultado "+uno);
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        int numero;
+        do {
+            //Menu
+            System.out.println("\nCalculemos la Sucesion de Fibonacci");
+            do{
+                System.out.println("Ingrese un numero mayor a 0");
+                numero = sc.nextInt();
+                if (numero <1) {
+                    System.out.println("ERROR!!! El numero no es mayor a 0\n");
+                }
+            }while(numero<1);
+            
+            if (numero<1) {
+                
             }
-            if (numero==2) {
-                 System.out.println("El numero ingresado es  "+ numero+ " y  da como resultado "+uno);
+            System.out.println("\nIngrese la forma de calcular y presione enter\n");
+            System.out.println("1) Tradicional (mas lento por la recursividad)");
+            System.out.println("2) Con array");
+            System.out.println("Para salir ingrese 0");
+
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Espere!!!");
+                    long resultado = originalFibonacci(numero);
+                    System.out.println("===============================");
+                    System.out.println("El resultado para "+ numero + " es "+ resultado );
+                    System.out.println("===============================");
+                    break;
+                case 2:
+                    mifibonacci(numero);
+                    break;
             }
-            System.out.println("El numero ingresado es  "+ numero+ " y  da como resultado "+resultado);
-        } else{ 
-            System.out.println("El numero ingresado es  " +numero+ " y su numero Fibonacci es muy grande para representar" );
-        }
+        } while (opcion != 0);
+
     }
-    
-    static long fibonacciArray(int n){
+
+    //Metodo de miFibonacci
+    private static long fibonacciArray(int n) {
         long[] secuencia = new long[n];
-        if (n>2 && n<=92) {
+        if (n > 2 && n <= 92) {
             secuencia[0] = 1;
-        secuencia[1] =1;
+            secuencia[1] = 1;
             System.out.println("-----------------");
-        for (int i = 2; i < n; i++) {
-            secuencia[i] = secuencia[i-1] + secuencia[i-2];
-            System.out.println("|   " + (i+1) + "   |   "+ secuencia[i]+"   |");
+            System.out.println("|   " + 1 + "   |   " + 1 + "   |");
+            System.out.println("|   " + 2 + "   |   " + 1 + "   |");
+            for (int i = 2; i < n; i++) {
+                secuencia[i] = secuencia[i - 1] + secuencia[i - 2];
+                System.out.println("|   " + (i + 1) + "   |   " + secuencia[i] + "   |");
+            }
         }
-        
-        }
-        if (n>2 && n<=92) {
-            return secuencia[n-1];
-        }else if (n>92){
-            return 0;  
-        }else{
+        if (n > 2 && n <= 92) {
+            return secuencia[n - 1];
+        } else if (n > 92) {
+            return 0;
+        } else {
             return 1;
         }
+    }
+
+    // Metodo para mostrar el resultado de miFibonacci
+    private static void mifibonacci(int numero) {
+        long resultado;
+        int uno = 1;
+        resultado = fibonacciArray(numero);
+        if (resultado != 0) {
+            if (numero == 1) {
+                System.out.println("El numero ingresado es  " + numero + " y  da como resultado " + uno);
+            }
+            if (numero == 2) {
+                System.out.println("El numero ingresado es  " + numero + " y  da como resultado " + uno);
+            }
+            System.out.println("El numero ingresado es  " + numero + " y  da como resultado " + resultado);
+        } else {
+            System.out.println("El numero ingresado es  " + numero + " y su numero Fibonacci es muy grande para representar");
+        }
+    }
+
+    private static long originalFibonacci(int numero) {
+        if (numero<2) {
+            return numero;
+        }else{
+            return originalFibonacci(numero-1)+ originalFibonacci(numero-2);
+        }
+        
+        
         
         
     }
-    
-    
-    
+
 }
