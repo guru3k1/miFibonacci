@@ -10,6 +10,7 @@ La tradicional es simple pero tiene la recursividad como principal enemiga.
 
 Se ve basicamente como algo asi:
 
+//Metodo Fibonacci
 long fibonacci (int n){
     if(n<2){
         return n;
@@ -28,6 +29,7 @@ Despues de leer bastante sobre este tema y encontrar varias maneras de resolverl
 
 Utilice un array en el que solamente se calcula la suma de los valores en forma de bucle
 
+// Otro Metodo Fibonacci
 private static long fibonacciArray(int n) {
         long[] secuencia = new long[n]; //Creamos un array del tamaño necesario
         if (n > 2 && n <= 92) { //pongo el limite de 92 dado que al ingresar el valor 93, se excede la capacidad de long
